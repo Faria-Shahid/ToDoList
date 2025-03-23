@@ -1,6 +1,5 @@
 package com.example.todolist.tasks;
 
-import com.example.todolist.email.EmailService;
 import com.example.todolist.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -129,23 +128,7 @@ public class TaskService {
 
         // Get all tasks where due date is tomorrow
         List<Task> tasksDueTomorrow = taskRepository.findByEndDate(tomorrow);
-
-        // Loop through the tasks and send reminders
-//        for (Task task : tasksDueTomorrow) {
-//            sendReminderEmail(task);
-//        }
     }
-
-    // This method will send the reminder email
-//    public void sendReminderEmail(Task task) {
-//        String subject = "Reminder: Your task is due tomorrow!";
-//        String body = "Dear User, \n\nThis is a reminder that the following task is due tomorrow:\n"
-//                + "Task: " + task.getTaskTitle() + "\n"
-//                + "\n\nPlease make sure to complete it on time.";
-//
-//        EmailService emailService;
-//
-//        // Sending email using the EmailService
-//        emailService.sendEmail(task.getUser().getEmail(), subject, body);
-//    }
 }
+
+
